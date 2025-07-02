@@ -11,6 +11,33 @@ Think of cmdlets like **specialized tools in a workshop**. You have a `Get-Wrenc
 * **Parameters:** Cmdlets use parameters (e.g., `-Name`, `-Path`) to specify options, similar to switches in other shells (`/` or `--`).
 * **Object-Based Output:** Instead of just text, cmdlets output **structured objects**. This is PowerShell's most powerful feature, allowing you to easily sort, filter, and manipulate the output by piping it to other cmdlets.
 
+### Common Cmdlets to Know
+
+| Cmdlet | Description | Common Aliases |
+| :--- | :--- | :--- |
+| `set-location` | The method of moving from directory to directory in powershell  | `cd` |
+| `Get-Help` | Displays help information about other cmdlets. | `help`, `man` |
+| `Get-Command` | Finds all available commands. | `gcm` |
+| `Get-Alias` | Finds the alias (short name) for a cmdlet or vice-versa. | `gal` |
+| `Get-ChildItem` | Lists files and folders in a directory. | `gci`, `ls`, `dir` |
+| `Get-Content` | Reads the content of a file. | `gc`, `cat`, `type` |
+| `Set-Content` | Writes new content to a file, overwriting existing content. | `sc` |
+| `Add-Content` | Appends content to the end of a file. | `ac` |
+| `Get-FileHash` | Computes the cryptographic hash of a file (SHA256, MD5, etc.).| |
+| `New-Item` | Creates a new item, such as a file or directory. | `ni`, `mkdir`, |
+| `Remove-Item` | Deletes an item, such as a file or directory. | `rm`, `del`, `erase` |
+| `Copy-Item` | Copies an item from one location to another. | `cp`, `copy` |
+| `Get-Process` | Lists all currently running processes. | `gps`, `ps` |
+| `Stop-Process` | Stops a running process. | `kill`,  |
+| `Get-Service` | Lists all system services. | `gsv` |
+| `Start-Service` | Starts a stopped service. | NA |
+| `Stop-Service` | Stops a running service. | NA |
+| `Where-Object` | Filters a collection of objects based on a condition. | `where`, `?` |
+| `Sort-Object` | Sorts objects based on a specific property. | `sort` |
+| `Select-Object` | Selects specific properties from an object or objects. | `select` |
+| `Test-Connection` | Sends ICMP echo request packets ("pings"). | `tcn` |
+| `Resolve-DnsName` | Performs a DNS query. | NA |
+
 ### Cmdlet Code Examples
 
 **Example 1: Getting Information with `Get-*`**
@@ -42,6 +69,30 @@ This demonstrates the power of piping objects. The output of one cmdlet becomes 
 # Get all running processes, sort them by CPU usage (descending),
 # and then select the top 5 to display.
 Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 5
+```
+
+### Directory Traversal Examples
+
+Navigating your file system is a fundamental skill.
+
+```powershell
+# See your current directory location (like 'pwd' in Bash)
+Get-Location
+
+# Change directory to the Windows folder (like 'cd' in Bash)
+Set-Location -Path "C:\Windows"
+
+# Use the 'cd' alias to change directory
+cd C:\Users
+
+# Move up one level
+cd ..
+
+# Move to the root of the current drive
+cd \
+
+# List the contents of the current directory (like 'ls -la' in Bash)
+Get-ChildItem
 ```
 ---
 
