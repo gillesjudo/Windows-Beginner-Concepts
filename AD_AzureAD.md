@@ -44,6 +44,13 @@ Traditional AD uses a strict, nested hierarchy to organize and manage resources 
 ---
 
 ```mermaid
+architecture
+    group ad_forest(cloud)[AD Forest]
+      group ad_tree(cloud)[Tree] in ad_forest
+        group ou1(cloud)[Organizational Unit 1] in ad_tree
+          service domainA(server)[Domain A] in ou1
+        group ou2(cloud)[Organizational Unit 2] in ad_tree
+          service domainB(server)[Domain B] in ou2
 ```
 ## Azure Active Directory comparison 
 ### Azure Active Directory / Microsoft Entra ID Hierarchy
