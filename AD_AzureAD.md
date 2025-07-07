@@ -47,9 +47,9 @@ architecture-beta
     group ad_forest(cloud)[AD Forest]
       group ad_tree(cloud)[Tree] in ad_forest
         group domainA(cloud)[DomainA] in ad_tree
-          service Organizational Unit 1(server)[Organizational Unit1] in domainA
+          service ou1(server)[Organizational Unit1] in domainA
         group domainB(cloud)[Domain B] in ad_tree
-          service Organizational Unit 2(server)[Orgainzational Unit 2] in domainB
+          service ou2(server)[Orgainzational Unit 2] in domainB
 ```
 ## :cloud: Azure Active Directory comparison 
 ### Azure Active Directory / Microsoft Entra ID Hierarchy
