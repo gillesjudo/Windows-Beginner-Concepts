@@ -47,10 +47,10 @@ architecture-beta
     group ad_forest(cloud)[AD Forest]
       group ad_tree(cloud)[Tree] in ad_forest
         group domainA(cloud)[DomainA] in ad_tree
-          service ou1(server)[Organizational Unit1] in domainA
+          service ou1(server)[Org Unit HR] in domainA
           service ou3(server)[Org Unit Sales] in domainA
         group domainB(cloud)[Domain B] in ad_tree
-          service ou2(server)[Orgainzational Unit 2] in domainB
+          service ou2(server)[Org Unit IT] in domainB
           service ou4(server)[Org Unit marketing] in domainB
 ```
 ## :cloud: Azure Active Directory comparison 
