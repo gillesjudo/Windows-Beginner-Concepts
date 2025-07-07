@@ -44,7 +44,7 @@ Traditional AD uses a strict, nested hierarchy to organize and manage resources 
 ---
 
 ```mermaid
-architecture
+architecture-beta
     group ad_forest(cloud)[AD Forest]
       group ad_tree(cloud)[Tree] in ad_forest
         group ou1(cloud)[Organizational Unit 1] in ad_tree
